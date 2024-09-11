@@ -1,0 +1,15 @@
+services:
+  debian-alpine:
+    build:
+      dockerfile: Dockerfile
+    container_name: debian-alpine
+    stdin_open: true # Garde STDIN ouvert pour une interaction avec le terminal
+    volumes:
+      - ./app:/app  # Monte le répertoire local ./app dans /app du conteneur
+    networks:
+      - debian-alpine-network
+
+networks:
+  debian-alpine-network:
+    driver: bridge
+
