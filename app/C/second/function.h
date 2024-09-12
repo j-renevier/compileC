@@ -1,0 +1,1 @@
+void bonjour (const char * nom);
